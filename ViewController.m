@@ -51,7 +51,7 @@ double rad;
     [self setShape:i];
 
     //create string; append to label
-    label = [NSString stringWithFormat: @"Shape: %@\t      Sides: %i\nDegrees: %.02f\nRadians: %.06f", title, i, deg, rad];
+    label = [NSString stringWithFormat: @"%@\tSides: %i\nDegrees: %.02f\nRadians: %.06f", title, i, deg, rad];
     infoLabel.Text = label;
     
 }//endSetString
