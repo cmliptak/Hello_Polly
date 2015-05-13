@@ -14,6 +14,7 @@
 
 @implementation ViewController
 @synthesize stepperOutlet,infoLabel;
+@import UIKit;
 
 //variables
 NSString *label;
@@ -42,12 +43,10 @@ double rad;
 
 - (IBAction)stepperAction:(id)sender {
     
-    
-    _imageView.image = nil;
-    
     i = stepperOutlet.value;
+
     [self setString:i];
-   
+    
 
 }//endStepperAction
 
@@ -59,7 +58,6 @@ double rad;
     //create string; append to label
     label = [NSString stringWithFormat: @"%@\tSides: %i\nDegrees: %.02f\nRadians: %.06f", title, i, deg, rad];
     infoLabel.Text = label;
-    
     
     CGFloat lineWidth    = 5.0;
     UIBezierPath *path   = [self roundedPolygonPathWithRect:self.imageView.bounds
@@ -78,9 +76,12 @@ double rad;
     border.path          = path.CGPath;
     border.lineWidth     = lineWidth;
     border.strokeColor   = [UIColor blackColor].CGColor;
-    border.fillColor     = [UIColor clearColor].CGColor;
+    border.fillColor     = [UIColor blackColor].CGColor;
     [self.imageView.layer addSublayer:border];
     
+    
+    
+
 }//endSetString
 
 -(void)setShape:(int)i{
