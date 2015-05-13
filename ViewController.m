@@ -29,9 +29,7 @@ double rad;
     
     //onLoad default
     i = 5;
-    [self setString:i];
-    
-    
+    [self setString:i]; 
 
 }
 
@@ -65,7 +63,7 @@ double rad;
                                                        line:lineWidth
                                                        sides:i
                                                        cRad:0.0];
-    
+    //imageView Layer
     CAShapeLayer *mask   = [CAShapeLayer layer];
     mask.path            = path.CGPath;
     mask.lineWidth       = lineWidth;
