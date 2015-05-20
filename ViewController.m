@@ -39,6 +39,16 @@ double rad;
     // Dispose of any resources that can be recreated.
 }
 
+//***********************************************************************
+//  specifies which orientations to accept
+//***********************************************************************
+- (NSUInteger)supportedInterfaceOrientations {
+    return (UIInterfaceOrientationMaskPortrait |
+            UIInterfaceOrientationMaskLandscapeLeft);
+}
+//***********************************************************************
+//  Action for the UIStepper
+//***********************************************************************
 - (IBAction)stepperAction:(id)sender {
     
     i = stepperOutlet.value;
@@ -48,6 +58,9 @@ double rad;
 
 }//endStepperAction
 
+//***********************************************************************
+// Set the label for each shape; set the image view to draw the shape
+//***********************************************************************
 -(void)setString:(int)i{
     deg = (180 *(i-2)/i);
     rad = (deg * M_PI/180);
@@ -84,6 +97,9 @@ double rad;
 
 }//endSetString
 
+//***********************************************************************
+//  Determine which shape
+//***********************************************************************
 -(void)setShape:(int)i{
     switch (i) {
         case 3:
@@ -122,8 +138,9 @@ double rad;
     
 }//endSetShape
 
-// BezierPath; create shape
-
+//***********************************************************************
+//  BezierPath; create shape
+//***********************************************************************
 - (UIBezierPath *)roundedPolygonPathWithRect:(CGRect)square
                                 line:(CGFloat)line
                                 sides:(NSInteger)sides
@@ -166,5 +183,6 @@ double rad;
     return path;
     
 }//end BezierPath
+
 
 @end
